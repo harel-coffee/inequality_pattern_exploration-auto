@@ -1,0 +1,32 @@
+digraph Tree {
+node [shape=box] ;
+graph [ranksep=equally, splines=polyline] ;
+0 [label="High dikes AG"] ;
+1 [label="Upstream dam development <= 2.5"] ;
+0 -> 1 [labeldistance=2.5, labelangle=45, headlabel="True"] ;
+5 [label="Low dikes DT"] ;
+1 -> 5 [labeldistance=2.5, labelangle=45, headlabel="True"] ;
+13 [label="samples = 2400"] ;
+5 -> 13 [labeldistance=2.5, labelangle=45, headlabel="True"];
+14 [label="High dikes DT"] ;
+5 -> 14 [labeldistance=2.5, labelangle=45, headlabel="False"] ;
+31 [label="samples = 2400"] ;
+14 -> 31 [labeldistance=2.5, labelangle=45, headlabel="True"] ;
+32 [label="samples = 2400"] ;
+14 -> 32 [labeldistance=2.5, labelangle=-45, headlabel="False"] ;
+6 [label="High dikes DT"] ;
+1 -> 6 [labeldistance=2.5, labelangle=-45, headlabel="False"] ;
+19 [label="samples = 2400"] ;
+6 -> 19 [labeldistance=2.5, labelangle=45, headlabel="True"] ;
+20 [label="Upstream dam development <= 4.5"] ;
+6 -> 20 [labeldistance=2.5, labelangle=-45, headlabel="False"] ;
+21 [label="samples = 3200"] ;
+20 -> 21 [labeldistance=2.5, labelangle=45, headlabel="True"];
+22 [label="samples = 1600"] ;
+20 -> 22 [labeldistance=2.5, labelangle=-45, headlabel="False"];
+{rank=same ; 0} ;
+{rank=same ; 1} ;
+{rank=same ; 5; 6} ;
+{rank=same ; 14; 20} ;
+{rank=same ; 13; 31; 32; 19; 21; 22} ;
+}
